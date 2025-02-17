@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	
+	body { 
+  font-family: 'Oswald'; color:#ffffff;
+  background-image: url('Home/black.jpg');
+  background-attachment:fixed;
+background-repeat: no-repeat;
+  background-position:center; 
+  background-size:100% 100%;
+  transform: rotate(0.00000000001deg);
+	
+* {
+  box-sizing: border-box;
+}
+			img {
+     width: 100%;
+     height: auto;
+     border: 2px solid #575D63;
+     padding: px;
+     transform: rotate(0.00000000001deg);
+   }
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+<h2>LIST MERK & TOKO</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Tulis Kategori...." title="Type in a name">
+<center>
+<ul id="myUL">
+ <b>
+<li>
+
+<a href="Perawatan dan Kecantikan/LumeColors/LumeColors.html">
+LumeColors<hr>
+<img src="Logo Toko/LumeColors.jpg"></a>
+
+<a href="Perawatan dan Kecantikan/Somethinc/Somethinc.html">
+SOMETHINC<hr>
+<img src="Logo Toko/Somethinc.jpg"></a>
+
+</li>
+
+</b>
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
